@@ -13,7 +13,7 @@ export default function Navegacao() {
                 <Route path="/" element = {<Home/>}/>
                 <Route path="/vaga" element = {<Vaga/>}/>
                 <Route path="/buscar" element = {<BuscarVaga/>}/>
-                <Route path="/buscar:id" element = {<BuscarVaga/>}/>
+                <Route path="/vaga/:id" element = {<Vaga/>}/>
 
 
             </Routes>

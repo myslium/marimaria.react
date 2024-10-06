@@ -4,14 +4,12 @@ import Cabecalho from '../../components/cabecalho'
 import axios from 'axios'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
 
 
 export default function BuscarVaga() {
 
     const [vagas, setVagas] = useState([])
 
-    const {id} = useParams
 
 
     async function buscar() {
@@ -25,11 +23,14 @@ export default function BuscarVaga() {
        
     }
 
-    async function deletar() {
+    async function deletar(pos, item) {
 
-        let url = `http://localhost:5010/vagas/del/${id}`
+        vagas.splice(pos, 1)
+        setVagas([...vagas])
 
-        await axios.delete(url)
+        let url = `http://localhost:5010/vagas/del/${item.id}`
+
+        let resp = await axios.delete(url)
 
         alert('vaga deletada')
         
@@ -58,7 +59,6 @@ export default function BuscarVaga() {
                         <thead>
 
                             <tr>
-                                <th>Id</th>
                                 <th>Empresa</th>
                                 <th>Email</th>
                                 <th>CNPJ</th>
@@ -80,8 +80,7 @@ export default function BuscarVaga() {
                         <tbody>
                           {vagas.map((item, pos) => 
                             
-                            <tr>
-                                <td>{item.id}</td>
+                            <tr key={pos}>
                                 <td>{item.nome_empresa}</td>
                                 <td>{item.contato_empresa}</td>
                                 <td>{item.cnpj}</td>
@@ -93,8 +92,8 @@ export default function BuscarVaga() {
                                 <td>{item.beneficios}</td>
                                 <td>{item.requisicoes}</td>
                                 <td>{item.descricao}</td>
-                                <td><Link to={`/${item.id}`}>Alterar</Link></td>
-                                <td onClick={deletar}><Link to = {`/buscar${item.id}`}>Deletar</Link></td>
+                                <td><Link to={`/vaga/${item.id}`}>Alterar</Link></td>
+                                <td id='deletar' onClick={() => deletar(pos, item)}>Deletar</td>
                             </tr>
                                 
                            
