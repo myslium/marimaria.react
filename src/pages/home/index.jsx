@@ -17,7 +17,7 @@ export default function Home()  {
             <div className='navegacao'>
                 <Link to= '/vaga'> <button>Inserir</button></Link>
                 <Link> <button>Deletar</button></Link>
-                <Link> <button>Buscar</button></Link>
+                <Link to = '/buscar'> <button>Buscar</button></Link>
                
                 
                

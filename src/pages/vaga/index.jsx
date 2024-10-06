@@ -3,6 +3,7 @@ import Cabecalho from '../../components/cabecalho'
 
 import { useState } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 export default function Vaga() {
 
@@ -46,6 +47,11 @@ export default function Vaga() {
     return (
         <div className='pagina-vaga'>
             <Cabecalho/>
+
+            <Link to = '/'>
+            <i id='icone' className='fa fa-arrow-left'></i>
+            </Link>
+            
             
             <main>
             <section className='vaga'>
