@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Vaga from "./pages/vaga";
+import Home from "./pages/home";
 
 export default function Navegacao() {
 
@@ -8,7 +9,8 @@ export default function Navegacao() {
         <BrowserRouter>
         
             <Routes>
-                <Route path="/" element = {<Vaga/>}/>
+                <Route path="/" element = {<Home/>}/>
+                <Route path="/vaga" element = {<Vaga/>}/>
             </Routes>
         
         </BrowserRouter>

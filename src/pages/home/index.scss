@@ -1,0 +1,50 @@
+
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40vh;
+
+    .titulo {
+        display: flex;
+        align-items: center;
+        margin-bottom: 3vw;
+
+        img {
+            width: 10vw;
+        }
+        h1 {
+            font-family: 'Ultra', sans-serif;
+            font-weight: 500;
+            color: #230835;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 3vw;
+        }
+    }
+
+    .navegacao {
+        display: flex;
+        align-items: center;
+        gap: 6vw;
+        
+        button {
+            padding: 1.2vw 3vw;
+            background-color: #c319e6;
+            color: #fff;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 1.2vw;
+            border: none;
+            border-radius: 1vw;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.2s ease-in-out;
+        }
+        button:hover {
+            background-color: #4e035e;
+
+        }
+    }
+}
